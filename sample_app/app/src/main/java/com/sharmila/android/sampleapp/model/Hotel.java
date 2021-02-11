@@ -117,4 +117,13 @@ public class Hotel {
         this.images = images;
     }
 
+    //Singleton design pattern
+    private static Hotel hotelOb;
+    public static Hotel getInstance(){
+        if(hotelOb==null){
+            hotelOb=new Hotel();
+        }
+        return  hotelOb;
+    }
+
 }

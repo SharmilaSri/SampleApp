@@ -10,4 +10,11 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_list">ListActivity</string>
+
+    <!--MainActivity-->
+    <string name="btn_txt_login_with_facebook">Login With facebook</string>
+
+    <string name="image_content_desc">Hotel Image</string>
+    <string name="sample_email">John@gmail.com</string>
+    <string name="sameple_name">John Williams</string>
 </resources>

@@ -15,8 +15,7 @@ import com.sharmila.android.sampleapp.viewmodel.HotelViewModel;
 public class DisplayListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     HotelListAdapter adapter;
-
-   HotelList hotelList;
+    HotelList hotelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +28,12 @@ public class DisplayListActivity extends AppCompatActivity {
     }
 
     private void setUpViews() {
+        //set up recycler
         recyclerView = findViewById(R.id.recycle_view_hotel_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //setup view model and network call
         HotelViewModel model = new ViewModelProvider(this).get(HotelViewModel.class);
         model.getHotels().observe(this, hotels -> {
             adapter = new HotelListAdapter(DisplayListActivity.this, hotels.getHotels());
