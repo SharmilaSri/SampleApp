@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/txtview_name"
+        android:text="@string/sameple_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fab_margin"
@@ -16,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:text="@string/sample_email"
         android:id="@+id/txtview_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
 
     <Button
         android:id="@+id/btn_logout"
+        android:text="@string/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fab_margin"

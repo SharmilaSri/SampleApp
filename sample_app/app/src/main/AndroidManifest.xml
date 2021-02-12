@@ -14,8 +14,14 @@
         android:theme="@style/Theme.SampleApp"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".HotelDetailDisplayActivity" />
-        <activity android:name=".DisplayListActivity" />
+        <activity android:name=".HotelDetailDisplayActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayListActivity" />
+        </activity>
+        <activity android:name=".DisplayListActivity" >
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

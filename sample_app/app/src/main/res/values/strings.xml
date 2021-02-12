@@ -17,4 +17,5 @@
     <string name="image_content_desc">Hotel Image</string>
     <string name="sample_email">John@gmail.com</string>
     <string name="sameple_name">John Williams</string>
+    <string name="logout">Logout</string>
 </resources>
