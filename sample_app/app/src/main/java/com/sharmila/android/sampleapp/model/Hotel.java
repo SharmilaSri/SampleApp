@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+/* Created By Sharmila Prasath
+ * February 2021
+ * */
 public class Hotel {
 
     @SerializedName("id")

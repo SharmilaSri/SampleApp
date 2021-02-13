@@ -23,6 +23,11 @@ import com.sharmila.android.sampleapp.model.Image;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/* Created By Sharmila Prasath
+ * February 2021
+ * Used in DisplayListActivity
+ * */
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.ViewHolder>{
 
     private List<Hotel> hotelList;
@@ -59,26 +64,24 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
             @Override
             public void onClick(View v) {
 
-                Hotel selectedHotel=Hotel.getInstance();
-                selectedHotel.setTitle(hotelList.get(position).getTitle());
-                selectedHotel.setDescription(hotelList.get(position).getDescription());
-                selectedHotel.setLongtitude(hotelList.get(position).getLongtitude());
-                selectedHotel.setLatitute(hotelList.get(position).getLatitute());
-                Image image=new Image();
-                image.setSmall(hotelList.get(position).getImages().getSmall());
-                selectedHotel.setImages(image);
-
-                Intent displayDetailsIntent=new Intent(context,HotelDetailDisplayActivity.class);
-                context.startActivity(displayDetailsIntent);
-                /*Intent displayDetailsIntent=new Intent(context,HotelDetailDisplayActivity.class);
-                displayDetailsIntent.putExtra("Title",hotelList.get(position).getTitle());
-                displayDetailsIntent.putExtra("Description",hotelList.get(position).getDescription());
-                displayDetailsIntent.putExtra("ImageUrl",hotelList.get(position).getImages().getMedium());
-                displayDetailsIntent.putExtra("Longtitude",hotelList.get(position).getLongtitude());
-                displayDetailsIntent.putExtra("Latitude",hotelList.get(position).getLatitute());
-                context.startActivity(displayDetailsIntent);*/
+               moveToHotelDetailDisplayActivity(position);
             }
         });
+    }
+
+    private void moveToHotelDetailDisplayActivity(int position) {
+        //Create a singleton hotel and set required values
+        Hotel selectedHotel=Hotel.getInstance();
+        selectedHotel.setTitle(hotelList.get(position).getTitle());
+        selectedHotel.setDescription(hotelList.get(position).getDescription());
+        selectedHotel.setLongtitude(hotelList.get(position).getLongtitude());
+        selectedHotel.setLatitute(hotelList.get(position).getLatitute());
+        Image image=new Image();
+        image.setSmall(hotelList.get(position).getImages().getSmall());
+        selectedHotel.setImages(image);
+
+        Intent displayDetailsIntent=new Intent(context,HotelDetailDisplayActivity.class);
+        context.startActivity(displayDetailsIntent);
     }
 
     @Override

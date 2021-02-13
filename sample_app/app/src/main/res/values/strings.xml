@@ -18,4 +18,8 @@
     <string name="sample_email">John@gmail.com</string>
     <string name="sameple_name">John Williams</string>
     <string name="logout">Logout</string>
+
+    <!--fb login-->
+    <string name="facebook_app_id">2306662472799375</string>
+    <string name="fb_login_protocol_scheme">fb2306662472799375</string>
 </resources>

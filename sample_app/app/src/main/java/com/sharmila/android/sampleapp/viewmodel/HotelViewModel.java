@@ -19,6 +19,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/* Created By Sharmila Prasath
+ * February 2021
+ * */
 public class HotelViewModel extends ViewModel {
 
     //this is the data that we will fetch asynchronously 

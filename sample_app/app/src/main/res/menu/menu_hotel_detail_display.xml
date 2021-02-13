@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/show_map"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@drawable/ic_baseline_add_location_24"
         android:title="map"
         app:showAsAction="always" />
 

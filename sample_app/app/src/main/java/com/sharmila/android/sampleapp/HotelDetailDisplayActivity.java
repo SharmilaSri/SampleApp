@@ -1,7 +1,6 @@
 package com.sharmila.android.sampleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,18 +9,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
-
 import com.bumptech.glide.Glide;
 import com.sharmila.android.sampleapp.model.Hotel;
 
+/* Created By Sharmila Prasath
+ * February 2021
+ * Display Detailed Hotel Informationy*/
 public class HotelDetailDisplayActivity extends AppCompatActivity {
     private  TextView txtViewHotelName;
     private  TextView txtViewHotelDescription;
     private  ImageView imageViewHotel;
-    private Toolbar toolbar;
     private Hotel selectedHotel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -3,6 +3,9 @@ package com.sharmila.android.sampleapp.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/* Created By Sharmila Prasath
+ * February 2021
+ * */
 public class Image {
 
     @SerializedName("small")
