@@ -32,6 +32,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
 
     private List<Hotel> hotelList;
     private Context context;
+    private HotelSelectedCallBack hotelSelectedCallBack;
 
 
     public HotelListAdapter(Context context,List<Hotel> hotelList) {
@@ -39,6 +40,10 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
         this.context=context;
         this.hotelList=hotelList;
 
+    }
+
+    public void setHotelSelectedCallBack(HotelSelectedCallBack hotelSelectedCallBack){
+        this.hotelSelectedCallBack=hotelSelectedCallBack;
     }
 
     @NonNull
@@ -80,8 +85,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
         image.setSmall(hotelList.get(position).getImages().getSmall());
         selectedHotel.setImages(image);
 
-        Intent displayDetailsIntent=new Intent(context,HotelDetailDisplayActivity.class);
-        context.startActivity(displayDetailsIntent);
+        hotelSelectedCallBack.hotelSelectedCallBack(selectedHotel);
     }
 
     @Override

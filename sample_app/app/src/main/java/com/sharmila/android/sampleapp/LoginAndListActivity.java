@@ -20,6 +20,8 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.sharmila.android.sampleapp.adapaters.HotelListAdapter;
+import com.sharmila.android.sampleapp.adapaters.HotelSelectedCallBack;
+import com.sharmila.android.sampleapp.model.Hotel;
 import com.sharmila.android.sampleapp.utils.Constants;
 import com.sharmila.android.sampleapp.utils.UtilityFunctions;
 import com.sharmila.android.sampleapp.viewmodel.HotelViewModel;
@@ -29,7 +31,7 @@ import java.util.Arrays;
 /* Created By Sharmila Prasath
  * February 2021
  * Display Hotel List*/
-public class LoginAndListActivity extends AppCompatActivity {
+public class LoginAndListActivity extends AppCompatActivity implements HotelSelectedCallBack {
 
     private RecyclerView recyclerView;
     private HotelListAdapter adapter;
@@ -103,6 +105,13 @@ public class LoginAndListActivity extends AppCompatActivity {
         model.getHotels().observe(LoginAndListActivity.this, hotels -> {
             if(hotels!=null) {//check if list is not null
                 adapter = new HotelListAdapter(LoginAndListActivity.this, hotels.getHotels());
+                adapter.setHotelSelectedCallBack(new HotelSelectedCallBack() {//callbackwhen a hotel is clicked from the list
+                    @Override
+                    public void hotelSelectedCallBack(Hotel selectedHotel) {
+                        Intent displayDetailsIntent=new Intent(getApplicationContext(),HotelDetailDisplayActivity.class);
+                        startActivity(displayDetailsIntent);
+                    }
+                });
                 recyclerView.setAdapter(adapter);
             }
         });
@@ -112,5 +121,11 @@ public class LoginAndListActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void hotelSelectedCallBack(Hotel selectedHotel) {
+        Intent displayDetailsIntent=new Intent(this,HotelDetailDisplayActivity.class);
+        startActivity(displayDetailsIntent);
     }
 }

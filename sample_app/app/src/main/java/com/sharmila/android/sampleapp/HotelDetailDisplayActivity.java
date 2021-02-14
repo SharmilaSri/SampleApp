@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.sharmila.android.sampleapp.adapaters.HotelSelectedCallBack;
 import com.sharmila.android.sampleapp.model.Hotel;
 
 /* Created By Sharmila Prasath
@@ -70,5 +71,6 @@ public class HotelDetailDisplayActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
 }
