@@ -77,10 +77,11 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
     private void moveToHotelDetailDisplayActivity(int position) {
         //Create a singleton hotel and set required values
         Hotel selectedHotel=Hotel.getInstance();
-        selectedHotel.setTitle(hotelList.get(position).getTitle());
-        selectedHotel.setDescription(hotelList.get(position).getDescription());
+        selectedHotel.setTitle(hotelList.get(position).getTitle()).setDescription(hotelList.get(position).getDescription())
+        .setLongtitude(hotelList.get(position).getLongtitude()).setLatitute(hotelList.get(position).getLatitute());
+       /* selectedHotel.setDescription(hotelList.get(position).getDescription());
         selectedHotel.setLongtitude(hotelList.get(position).getLongtitude());
-        selectedHotel.setLatitute(hotelList.get(position).getLatitute());
+        selectedHotel.setLatitute(hotelList.get(position).getLatitute());*/
         Image image=new Image();
         image.setSmall(hotelList.get(position).getImages().getSmall());
         selectedHotel.setImages(image);

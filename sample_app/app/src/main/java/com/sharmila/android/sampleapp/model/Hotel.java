@@ -64,16 +64,18 @@ public class Hotel {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Hotel setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Hotel setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public String getAddress() {
@@ -104,16 +106,18 @@ public class Hotel {
         return latitute;
     }
 
-    public void setLatitute(String latitute) {
+    public Hotel setLatitute(String latitute) {
         this.latitute = latitute;
+        return this;
     }
 
     public String getLongtitude() {
         return longtitude;
     }
 
-    public void setLongtitude(String longtitude) {
+    public Hotel setLongtitude(String longtitude) {
         this.longtitude = longtitude;
+        return this;
     }
 
     public void setImages(Image images) {
